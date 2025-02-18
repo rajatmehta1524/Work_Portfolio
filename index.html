@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Portfolio - Rajat Mehta">
+    <meta name="keywords" content="portfolio, web development, projects">
+    <meta name="author" content="Rajat Mehta">
+    
+    <title>Rajat Mehta - Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Rajat Mehta</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="assets/resume.pdf" target="_blank">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <img src="assets/img/hero-profile.png" alt="Rajat Mehta">
+        </div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-12">
+                    <div class="hero-content" data-aos="fade-right">
+                        <h1>
+                            <span class="text-white" id="greeting"></span>
+                            <span class="highlight-text" id="name"></span>
+                        </h1>
+                        <p class="profession mb-3" data-aos="fade-up" data-aos-delay="200">Machine Learning Engineer | Computer Vision Specialist</p>
+                        <p class="about-text mb-4" data-aos="fade-up" data-aos-delay="300">
+                            I've invested the last 6 years of my life learning, training and deploying Machine Learning and Computer Vision Solutions for several teams and projects. Looking forward to the next 6 doing a lot more............
+                        </p>
+                        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                            <a href="assets/resume.pdf" class="btn btn-primary me-3" download>Download Resume</a>
+                            <a href="#projects" class="btn btn-outline-light">Explore Work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">My Skills</h2>
+            <div class="row g-4">
+                <!-- Programming Skills -->
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="skill-box p-4">
+                        <div class="skill-category-header d-flex align-items-center mb-3">
+                            <i class="fas fa-code fa-2x me-3"></i>
+                            <h4 class="mb-0">Programming Skills</h4>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="badge">C++</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">MATLAB</span>
+                            <span class="badge">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Tools -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-box p-4">
+                        <div class="skill-category-header d-flex align-items-center mb-3">
+                            <i class="fas fa-tools fa-2x me-3"></i>
+                            <h4 class="mb-0">Core Tools</h4>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="badge">TensorFlow</span>
+                            <span class="badge">OpenCV</span>
+                            <span class="badge">ROS</span>
+                            <span class="badge">Unreal Engine</span>
+                            <span class="badge">Arduino</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science Tools -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-box p-4">
+                        <div class="skill-category-header d-flex align-items-center mb-3">
+                            <i class="fas fa-database fa-2x me-3"></i>
+                            <h4 class="mb-0">Data Science & Storage</h4>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="badge">Numpy</span>
+                            <span class="badge">Pandas</span>
+                            <span class="badge">scikit-learn</span>
+                            <span class="badge">Amazon S3</span>
+                            <span class="badge">Git LFS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hardware -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-box p-4">
+                        <div class="skill-category-header d-flex align-items-center mb-3">
+                            <i class="fas fa-microchip fa-2x me-3"></i>
+                            <h4 class="mb-0">Hardware</h4>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="badge">Raspberry Pi</span>
+                            <span class="badge">RealSense Camera</span>
+                            <span class="badge">ATMEL MCU</span>
+                            <span class="badge">ESP Modules</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding bg-dark-theme">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Work Experience</h2>
+            <div class="timeline">
+                <!-- First Experience - Right Side -->
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="timeline-content shadow-sm p-4 rounded experience-card">
+                        <div class="experience-card-inner">
+                            <div class="experience-front">
+                                <h4>Machine Learning and Autonomy Engineer</h4>
+                                <h5>Tocaro Blue, LLC</h5>
+                                <p class="text-muted mb-0">Feb 2024 - Present</p>
+                                <p class="location mb-0"><i class="fas fa-map-marker-alt me-2"></i>Birmingham, AL</p>
+                            </div>
+                            <div class="experience-back">
+                                <div class="skill-tags mt-3">
+                                    <span class="badge">Transformers</span>
+                                    <span class="badge">Computer Vision</span>
+                                    <span class="badge">Marine Radar</span>
+                                    <span class="badge">Semantic Segmentation</span>
+                                    <span class="badge">Statistical Modelling</span>
+                                    <span class="badge">Tracking Filters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second Experience - Left Side -->
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="timeline-content shadow-sm p-4 rounded experience-card">
+                        <div class="experience-card-inner">
+                            <div class="experience-front">
+                                <h4>Perception Engineering Coop</h4>
+                                <h5>Bluefusion Inc.</h5>
+                                <p class="text-muted mb-0">June 2022 - Aug 2022</p>
+                                <p class="location mb-0"><i class="fas fa-map-marker-alt me-2"></i>Boston, MA</p>
+                            </div>
+                            <div class="experience-back">
+                                <div class="skill-tags mt-3">
+                                    <span class="badge">Autonomous Perception</span>
+                                    <span class="badge">Sensor Fusion</span>
+                                    <span class="badge">Computer Vision</span>
+                                    <span class="badge">Radar Systems</span>
+                                    <span class="badge">Lidar</span>
+                                    <span class="badge">Stereo Imagery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Experience - Right Side -->
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="timeline-content shadow-sm p-4 rounded experience-card">
+                        <div class="experience-card-inner">
+                            <div class="experience-front">
+                                <h4>Robotics Engineer</h4>
+                                <h5>Rashail Tech Labs Pvt. Ltd.</h5>
+                                <p class="text-muted mb-0">June 2019 - Dec 2020</p>
+                                <p class="location mb-0"><i class="fas fa-map-marker-alt me-2"></i>Indore, India</p>
+                            </div>
+                            <div class="experience-back">
+                                <div class="skill-tags mt-3">
+                                    <span class="badge">Industrial Robotics</span>
+                                    <span class="badge">Stepper Motors</span>
+                                    <span class="badge">Arduino</span>
+                                    <span class="badge">CNC</span>
+                                    <span class="badge">IoT</span>
+                                    <span class="badge">C++</span>
+                                    <span class="badge">WiFi Modules</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">My Projects</h2>
+            <div class="projects-container">
+                <!-- Dense Depth Maps Project -->
+                <div class="project-col" data-aos="fade-up">
+                    <a href="projects/depth-maps.html" class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dense Depth Maps Generation using LiDAR and Stereo Imagery</h5>
+                            <div class="project-tags">
+                                <span class="badge">CNN</span>
+                                <span class="badge">LiDAR</span>
+                                <span class="badge">Stereo Vision</span>
+                                <span class="badge">KITTI Dataset</span>
+                                <span class="badge">NVIDIA GPU</span>
+                            </div>
+                            <p class="card-text">
+                                • Generated 3D Depth maps for Autonomous Vehicles using a special CNN architecture with an encoder-decoder network.<br>
+                                • Utilized point cloud data from LiDAR and disparity from stereo images.<br>
+                                • Achieved RMSE score of 1548.89 with 0.4s generation time on NVIDIA GTX 1060 GPU.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- U-Net Image Segmentation -->
+                <div class="project-col" data-aos="fade-up">
+                    <a href="projects/u-net.html" class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Image Segmentation using U-Net</h5>
+                            <div class="project-tags">
+                                <span class="badge">U-Net</span>
+                                <span class="badge">Semantic Segmentation</span>
+                                <span class="badge">Deep Learning</span>
+                                <span class="badge">TGS Dataset</span>
+                            </div>
+                            <p class="card-text">
+                                • Performed Semantic Segmentation on TGS Salt Identification dataset.<br>
+                                • Trained U-Net Architecture from scratch on 4000+ images.<br>
+                                • Achieved 96% test accuracy in classifying salt deposits from sediments.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Point Cloud Mapping -->
+                <div class="project-col" data-aos="fade-up">
+                    <a href="projects/point-cloud.html" class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Point Cloud Mapping for COBRA Bot</h5>
+                            <div class="project-tags">
+                                <span class="badge">RealSense</span>
+                                <span class="badge">Point Cloud</span>
+                                <span class="badge">3D Vision</span>
+                                <span class="badge">Robotics</span>
+                            </div>
+                            <p class="card-text">
+                                • Generated 3D Colorized Depth Frames from grayscale & RGB Images using RealSense Stereo Camera.<br>
+                                • Implemented Point Cloud Sampling for COBRA Bot surroundings at 10% Density.<br>
+                                • Integrated real-time 3D mapping capabilities.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Face Monitored Wheelchair -->
+                <div class="project-col" data-aos="fade-up">
+                    <a href="projects/wheelchair.html" class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Face Monitored WheelChair System</h5>
+                            <div class="project-tags">
+                                <span class="badge">Computer Vision</span>
+                                <span class="badge">ESP32</span>
+                                <span class="badge">IoT</span>
+                                <span class="badge">Robotics</span>
+                                <span class="badge">Real-time Processing</span>
+                            </div>
+                            <p class="card-text">
+                                • Developed a Robotic Wheelchair controlled by facial gestures.<br>
+                                • Implemented real-time facial keypoint extraction for user intent prediction.<br>
+                                • Created WiFi server with ESP-32 CAM module for motor control signals.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-dark-theme">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Get In Touch</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="contact-info">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-envelope fa-2x me-3 text-primary"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <a href="mailto:rajatmehta1524@gmail.com">rajatmehta1524@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="social-links mt-5">
+                            <a href="https://github.com/rajatmehta1524" target="_blank" class="me-4" title="GitHub">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rajat-mehta2/" target="_blank" class="me-4" title="LinkedIn">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
