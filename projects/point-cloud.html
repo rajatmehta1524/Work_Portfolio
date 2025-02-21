@@ -33,17 +33,121 @@
     <!-- Project Content -->
     <section class="project-detail section-padding">
         <div class="container">
-            <h1 class="project-title">Point Cloud Mapping for COBRA Bot</h1>
+            <h1 class="project-title">Point Cloud Mapping for COBRA Search and Rescue</h1>
             <div class="project-tags mb-4">
                 <span class="badge">RealSense</span>
                 <span class="badge">Point Cloud</span>
                 <span class="badge">3D Vision</span>
                 <span class="badge">Robotics</span>
+                <span class="badge">ROS</span>
             </div>
-            <div class="project-description">
-                <p>• Generated 3D Colorized Depth Frames from grayscale & RGB Images using RealSense Stereo Camera.</p>
-                <p>• Implemented Point Cloud Sampling for COBRA Bot surroundings at 10% Density.</p>
-                <p>• Integrated real-time 3D mapping capabilities.</p>
+
+            <!-- Introduction -->
+            <div class="project-section">
+                <h2>Introduction</h2>
+                <p>Search and rescue operations require swift and efficient identification of survivors in disaster-stricken areas. Traditional methods often pose risks to human rescuers due to unstable environments, fires, and gas leaks. Robotic search and rescue (SAR) systems are being developed to mitigate these dangers while improving survivor detection and environmental assessment.</p>
+                <p>COBRA, a <strong>snake-like search and rescue robot</strong>, utilizes its flexible and modular design to navigate through confined spaces, providing crucial real-time data. This project implements <strong>point cloud mapping</strong> using <strong>stereo vision</strong> and <strong>LiDAR</strong> to enhance COBRA's ability to detect objects, map its surroundings, and assist in rescue missions.</p>
+            </div>
+
+            <!-- Need -->
+            <div class="project-section">
+                <h2>Need for the Project</h2>
+                <ul class="feature-list">
+                    <li><strong>Enhanced Survivability:</strong> Faster survivor detection increases survival rates.</li>
+                    <li><strong>Hazardous Environments:</strong> Deploying robots in unsafe areas reduces risks to human rescuers.</li>
+                    <li><strong>Navigation in Confined Spaces:</strong> Snake-like design enables movement through debris and collapsed structures.</li>
+                    <li><strong>Real-Time Mapping:</strong> Integration of point cloud mapping allows accurate visualization of search environments.</li>
+                </ul>
+            </div>
+
+            <!-- Competitive Landscape -->
+            <div class="project-section">
+                <h2>Competitive Landscape</h2>
+                <p>Several robotic SAR systems exist, including:</p>
+                <ul class="feature-list">
+                    <li><strong>Johns Hopkins Snake Robot:</strong> Features internal suspension for improved terrain adaptability.</li>
+                    <li><strong>OriSnake (Worcester Polytechnic Institute):</strong> Uses origami-inspired modules for increased flexibility.</li>
+                    <li><strong>Carnegie Mellon SAR Snake Robot:</strong> Deployed in the <strong>2017 Mexico City earthquake</strong> for search missions.</li>
+                </ul>
+                <p>These developments highlight the growing importance of snake-like robots in SAR missions. However, our approach improves upon existing designs by <strong>integrating point cloud mapping with stereo vision for real-time localization and mapping.</strong></p>
+            </div>
+
+            <!-- Methodology -->
+            <div class="project-section">
+                <h2>Methodology</h2>
+
+                <h3>1. Hardware Setup</h3>
+                <p>COBRA is equipped with an <strong>Intel RealSense D455 Depth Camera</strong>, which calculates object depth using stereo vision. The system comprises:</p>
+                <ul class="methodology-list">
+                    <li><strong>Left & Right Imager Cameras:</strong> Capture stereo images for depth calculation.</li>
+                    <li><strong>Infrared Projector:</strong> Enhances depth accuracy in low-texture scenes.</li>
+                    <li><strong>Vision Processor Module:</strong> Computes pixel-wise depth information.</li>
+                </ul>
+
+                <div class="project-image">
+                    <img src="../assets/img/pointcloud/Image1.png" alt="Intel RealSense Camera Setup">
+                </div>
+
+                <h3>2. Software Implementation</h3>
+                <p>COBRA's point cloud mapping utilizes <strong>RealSense SDK Library</strong> and <strong>ROS (Robot Operating System)</strong>:</p>
+                <ul class="methodology-list">
+                    <li><strong>Real-Time Mapping:</strong> ROS wrapper for RealSense devices processes stereo depth data.</li>
+                    <li><strong>Simulation in Gazebo:</strong> Enables testing of stereo vision algorithms before real-world deployment.</li>
+                    <li><strong>Motion Control:</strong> Planned integration with <strong>inverse kinematics</strong> for optimized path planning.</li>
+                </ul>
+
+                <div class="project-image">
+                    <img src="../assets/img/pointcloud/Image2.png" alt="RealSense Camera Data Processing">
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="project-section">
+                <h2>Results & Evaluation</h2>
+                <h3>1. Colorized Depth Mapping</h3>
+                <ul class="feature-list">
+                    <li>Enhances <strong>spatial awareness</strong> by distinguishing foreground and background objects.</li>
+                    <li>Improves <strong>object edge detection</strong> for better mapping accuracy.</li>
+                </ul>
+
+                <h3>2. Point Cloud Mapping</h3>
+                <ul class="feature-list">
+                    <li>Enables <strong>real-time 3D mapping</strong> of environments.</li>
+                    <li>Facilitates <strong>obstacle detection</strong> for navigation.</li>
+                    <li>Allows for <strong>survivor identification</strong> using depth perception.</li>
+                </ul>
+            </div>
+
+            <!-- Challenges -->
+            <div class="project-section">
+                <h2>Challenges & Future Improvements</h2>
+                
+                <h3>Challenges Faced:</h3>
+                <ul class="challenges-list">
+                    <li>Limited access to hardware for real-time testing.</li>
+                    <li>Stereo vision mapping is <strong>sensitive to occlusions</strong>.</li>
+                    <li>Lack of an implemented <strong>motion control routine</strong> in Gazebo.</li>
+                </ul>
+
+                <h3>Future Improvements:</h3>
+                <ul class="future-list">
+                    <li><strong>Full Motion Planning:</strong> Implement inverse kinematics-based control for smooth navigation.</li>
+                    <li><strong>Onboard Processing:</strong> Run mapping algorithms directly on COBRA's embedded system.</li>
+                    <li><strong>Larger Datasets:</strong> Train on <strong>extensive SAR environments</strong> for improved real-world accuracy.</li>
+                    <li><strong>End-to-End Mapping Pipeline:</strong> Seamlessly integrate stereo vision, LiDAR, and motion control.</li>
+                </ul>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="project-section">
+                <h2>Conclusion</h2>
+                <p>The integration of <strong>point cloud mapping</strong> with COBRA enhances <strong>search and rescue operations</strong> by providing <strong>real-time, detailed 3D maps</strong> of disaster environments. While initial tests show promising results, continued hardware and software improvements will make COBRA a more <strong>reliable and autonomous SAR tool</strong>.</p>
+            </div>
+
+            <!-- Acknowledgments -->
+            <div class="project-section">
+                <h2>Acknowledgments</h2>
+                <p>Special thanks to the development team for their contributions to COBRA's design, mapping software, and testing phases.</p>
             </div>
         </div>
     </section>
