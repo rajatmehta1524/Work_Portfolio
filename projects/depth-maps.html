@@ -41,10 +41,148 @@
                 <span class="badge">KITTI Dataset</span>
                 <span class="badge">NVIDIA GPU</span>
             </div>
-            <div class="project-description">
-                <p>• Generated 3D Depth maps for Autonomous Vehicles using a special CNN architecture with an encoder-decoder network.</p>
-                <p>• Utilized point cloud data from LiDAR and disparity from stereo images.</p>
-                <p>• Achieved RMSE score of 1548.89 with 0.4s generation time on NVIDIA GTX 1060 GPU.</p>
+
+            <!-- Introduction -->
+            <div class="project-section">
+                <h2>Introduction</h2>
+                <p>Autonomous vehicles and robotic vision systems require accurate 3D maps for navigation and decision-making. However, acquiring high-quality depth data is challenging due to the trade-offs between different sensor technologies. LiDAR provides highly accurate depth information but is sparse, while stereo cameras generate dense depth maps but are less accurate.</p>
+                <p>This project focuses on fusing these two sources to create <strong>dense depth maps</strong>, leveraging stereo correspondences and LiDAR data. Our approach enhances depth completion using deep learning models, improving the reliability of depth estimation in autonomous navigation.</p>
+            </div>
+
+            <!-- Importance -->
+            <div class="project-section">
+                <h2>Why is This Project Important?</h2>
+                <ul class="feature-list">
+                    <li><strong>Autonomous Vehicles:</strong> Enhancing depth perception improves safety and navigation.</li>
+                    <li><strong>Augmented Reality (AR) & Virtual Reality (VR):</strong> Accurate depth data aids in realistic object placement.</li>
+                    <li><strong>3D Mapping & Robotics:</strong> Dense maps contribute to spatial understanding for robotic applications.</li>
+                    <li><strong>Cost Efficiency:</strong> High-resolution LiDARs are expensive. Fusing stereo and low-resolution LiDAR data provides a cost-effective solution.</li>
+                </ul>
+            </div>
+
+            <!-- Dataset -->
+            <div class="project-section">
+                <h2>Dataset Used</h2>
+                <p>This project leverages two publicly available datasets:</p>
+                <ol class="dataset-list">
+                    <li><strong>KITTI Depth Selection Dataset:</strong> Contains stereo images and LiDAR point clouds from various road environments, with 42,949 training samples and 1,000 validation samples.</li>
+                    <li><strong>KITTI Stereo Dataset:</strong> Includes 194 training and 195 testing stereo image pairs with sparse LiDAR depth information.</li>
+                </ol>
+            </div>
+
+            <!-- Methodology -->
+            <div class="project-section">
+                <h2>Methodology</h2>
+                
+                <h3>1. Baseline Model</h3>
+                <p>We initially attempted an existing model using guided convolutions for depth completion. However, due to computational constraints and implementation challenges, we pivoted towards a more efficient architecture.</p>
+
+                <h3>2. Proposed Approach</h3>
+                <p>Instead of relying solely on RGB-LiDAR fusion, our model incorporates <strong>stereo disparity</strong> into the learning pipeline. The methodology involves:</p>
+                <ul class="methodology-list">
+                    <li><strong>Stereo Image Encoding:</strong> Two CNN-based encoders extract features from left and right stereo images.</li>
+                    <li><strong>Spatial Pyramid Pooling (SPP):</strong> Captures multi-scale contextual information to refine depth estimation.</li>
+                    <li><strong>Cost Volume Calculation:</strong> Generates disparity maps from stereo image features.</li>
+                    <li><strong>LiDAR Feature Extraction:</strong> A separate CNN encoder processes sparse LiDAR depth information.</li>
+                    <li><strong>Fusion Module:</strong> Combines disparity-based depth estimation with LiDAR data for enhanced accuracy.</li>
+                    <li><strong>Stacked Hourglass Decoder:</strong> Upsamples the fused depth map to match the original resolution.</li>
+                </ul>
+
+                <div class="project-image">
+                    <img src="../assets/img/depthmaps/Image1.png" alt="Model Architecture Diagram">
+                </div>
+
+                <h3>3. Loss Function</h3>
+                <p>The model is trained using a combination of:</p>
+                <ul>
+                    <li><strong>Mean Squared Error (MSE):</strong> Evaluates depth prediction accuracy.</li>
+                    <li><strong>Smoothness Loss:</strong> Encourages spatial consistency in depth maps.</li>
+                </ul>
+            </div>
+
+            <!-- Implementation -->
+            <div class="project-section">
+                <h2>Implementation Details</h2>
+                <ul class="implementation-list">
+                    <li>The model is trained end-to-end using <strong>Adam optimizer</strong> with a learning rate of <strong>0.001</strong>.</li>
+                    <li>Pre-trained encoder weights were fine-tuned using the KITTI dataset.</li>
+                    <li>Training was performed on <strong>4 video sequences</strong> due to time constraints.</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <p class="text-muted text-center">(Sample Depth Map Output)</p>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="project-section">
+                <h2>Results & Evaluation</h2>
+                <p>The model's performance was evaluated using standard depth completion metrics:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Ours</th>
+                                <th>Baseline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RMSE</td>
+                                <td>1548.89</td>
+                                <td>792.80</td>
+                            </tr>
+                            <tr>
+                                <td>MAE</td>
+                                <td>493.65</td>
+                                <td>225.81</td>
+                            </tr>
+                            <tr>
+                                <td>iRMSE</td>
+                                <td>5.01</td>
+                                <td>2.42</td>
+                            </tr>
+                            <tr>
+                                <td>iMAE</td>
+                                <td>1.86</td>
+                                <td>0.99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>While our model produces consistent depth maps, it underperforms compared to state-of-the-art approaches, likely due to limited training data.</p>
+
+                <div class="project-image">
+                    <img src="../assets/img/depthmaps/Image2.png" alt="Depth Map Comparison">
+                </div>
+            </div>
+
+            <!-- Challenges -->
+            <div class="project-section">
+                <h2>Challenges & Future Work</h2>
+                
+                <h3>Challenges Faced:</h3>
+                <ul class="challenges-list">
+                    <li>Limited training time due to computational constraints.</li>
+                    <li>Stereo depth estimation is sensitive to occlusions and textureless regions.</li>
+                    <li>Integrating stereo and LiDAR features optimally requires further tuning.</li>
+                </ul>
+
+                <h3>Future Improvements:</h3>
+                <ul class="future-list">
+                    <li><strong>End-to-End Training:</strong> Train the full model rather than separate components.</li>
+                    <li><strong>Larger Dataset:</strong> Incorporate datasets like SceneFlow to improve generalization.</li>
+                    <li><strong>Dilated Convolutions:</strong> Experiment with receptive field expansion for better depth refinement.</li>
+                </ul>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="project-section">
+                <h2>Conclusion</h2>
+                <p>This project demonstrates the feasibility of fusing stereo disparity with LiDAR data for depth map generation. While preliminary results show promise, further training and optimization can enhance its performance. Future work aims to refine the model for industrial and real-world applications, such as autonomous driving and robotic navigation.</p>
             </div>
         </div>
     </section>

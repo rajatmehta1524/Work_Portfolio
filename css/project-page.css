@@ -5,11 +5,11 @@
 }
 
 .project-title {
-    color: #1e90ff;
+    color: #333;
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
     padding-bottom: 1rem;
 }
@@ -21,7 +21,26 @@
     left: 0;
     width: 100px;
     height: 3px;
-    background: linear-gradient(to right, rgba(30, 144, 255, 0.8), rgba(30, 144, 255, 0.2));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+}
+
+.project-section {
+    margin-bottom: 3rem;
+}
+
+.project-section h2 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.project-section h3 {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
 }
 
 .project-description {
@@ -39,8 +58,109 @@
     padding: 0.5rem 1rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-    background-color: rgba(30, 144, 255, 0.1) !important;
-    color: #1e90ff;
-    border: 1px solid rgba(30, 144, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
+}
+
+/* Lists Styling */
+.feature-list,
+.methodology-list,
+.implementation-list,
+.challenges-list,
+.future-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.feature-list li,
+.methodology-list li,
+.implementation-list li,
+.challenges-list li,
+.future-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-list li:before,
+.methodology-list li:before,
+.implementation-list li:before,
+.challenges-list li:before,
+.future-list li:before {
+    content: '•';
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Table Styling */
+.table {
+    margin: 2rem 0;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.table th {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Image Placeholders */
+.image-placeholder {
+    background: rgba(0, 0, 0, 0.03);
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 3rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* Add styles for project images */
+.project-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-image-caption {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2rem;
+    }
+
+    .project-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .project-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .table-responsive {
+        margin: 1rem -15px;
+        width: calc(100% + 30px);
+    }
 } 
